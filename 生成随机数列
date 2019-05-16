@@ -1,0 +1,16 @@
+#生成一组X位的的随机数列
+const randomNum = (x)=>{ 
+	let num = ""; 
+	for(let i=0;i<x;i++){ 
+		num += Math.floor(Math.random()*10); 
+	} 
+	return num;
+};
+//首先声明一个空对象（必须为string类型，这样循环出的数将会拼接而不是累加），生成一个0（包含）到10（不包含）的数（带有小数，所以要用Math.floor()方法进行向下取整）,循环出x个数进行拼接，随后返回生成的x位随机数
+
+
+#生成x位到y位的随机数
+const randomNum = (minNum,maxNum) => {
+	return Math.floor(Math.random() * (maxNum - minNum + 1) + minNum); 
+};
+//首先生成一个0（包含）到1（不包含）的随机数，+ minNum保证获取到的数大于最小值，随机数乘最大值获取范围的最大值，maxNum - minNum生成的数保证了既不会小于minNum也不会大于maxNum，+ minNum也保证了能得到最大值，因为随机的数永远不会等于1，为了能得到最大值所以要加1（Math.floor()方法是向下取整的，因为忽略了小数位，所以如果不加1的话，生成的最大值会永远比maxNum少1）
