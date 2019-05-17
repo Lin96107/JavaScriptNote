@@ -1,0 +1,6 @@
+如果是用户点击操作及js操作，打开新窗口不会被拦截，如果在ajax回调函数中打开新窗口就会被拦截
+
+let newWindow = window.open("about:blank"); //函数开始执行时，先打开一个空页面
+
+newWindow.location = url; //重定向新窗口地址（这一步可放在Ajax的回调函数中执行）
+
